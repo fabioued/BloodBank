@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_create_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.example.bloodbank.CreateList">
 
     <TextView
@@ -19,39 +19,89 @@
         android:textSize="22sp"/>
 
     <TextView
+        android:id="@+id/name_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/instructions"
+        android:layout_marginTop="30dp"
         android:text="Name: "
-        android:layout_marginTop="30dp"
         android:textSize="22sp"/>
 
     <TextView
+        android:id="@+id/blood_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/name_field"
+        android:layout_marginTop="30dp"
         android:text="Blood Group: "
-        android:layout_marginTop="30dp"
+        android:textSize="22sp"/>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructions"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/name_field"
         android:textSize="22sp"/>
 
     <TextView
+        android:id="@+id/loc_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/blood_field"
+        android:layout_marginTop="30dp"
         android:text="Location: "
-        android:layout_marginTop="30dp"
         android:textSize="22sp"/>
 
-    <TextView
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blood_field"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/loc_field"
+        android:layout_toEndOf="@id/loc_field"
+        android:textSize="22sp"/>
+
+    <Spinner
+        android:id="@+id/blood_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Allergies (if any) : "
+        android:layout_above="@id/loc_field"
+        android:layout_below="@id/name_field"
+        android:layout_marginTop="32sp"
+        android:layout_toRightOf="@id/blood_field"
+        android:layout_toEndOf="@id/blood_field">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/aller_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loc_field"
         android:layout_marginTop="30dp"
+        android:text="Allergies (if any) : "
+        android:textSize="22sp"/>
+
+    <EditText
+        android:id="@+id/allergy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loc_field"
+        android:layout_marginTop="22dp"
+        android:layout_toRightOf="@id/aller_field"
+        android:layout_toEndOf="@id/aller_field"
         android:textSize="22sp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:textSize="22sp"
+        android:layout_below="@id/aller_field"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:layout_gravity="center"/>
-    
-</LinearLayout>
+        android:text="Submit"
+        android:onClick="openHome"
+        android:textSize="22sp"/>
+</RelativeLayout>
