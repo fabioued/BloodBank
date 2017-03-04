@@ -90,6 +90,7 @@ public class CreateList extends AppCompatActivity {
 
             //Disable the button until further activity
             submit.setEnabled(false);
+
         }
     }
 }
