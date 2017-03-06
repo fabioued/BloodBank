@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp">
         </Spinner>
-    
+
         <Button
             android:id="@+id/blood_search"
             android:layout_marginLeft="10sp"

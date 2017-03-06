@@ -3,7 +3,6 @@ package com.example.bloodbank;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ButtonBarLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -23,11 +22,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static android.R.attr.required;
-import static android.R.attr.x;
-import static android.R.id.list;
 
 public class DonorList extends AppCompatActivity {
 
@@ -80,7 +74,7 @@ public class DonorList extends AppCompatActivity {
 
                             //Looping through the entire JSON array to get all the values
                             for(int i = 0;i < search_results_array.length(); i++) {
-                                Log.i("custom", search_results_array.get(i).toString());
+                                //Log.i("custom", search_results_array.get(i).toString());
                                 search_results.add(((JSONObject)search_results_array.get(i)).getString("Name"));
                             }
 

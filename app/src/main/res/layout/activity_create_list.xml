@@ -60,7 +60,6 @@
                 android:text="Select your blood type: "
                 android:textSize="22sp"/>
 
-
                 <Spinner
                 android:id="@+id/blood_spinner"
                 android:layout_width="wrap_content"

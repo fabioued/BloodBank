@@ -18,8 +18,10 @@ import com.android.volley.toolbox.Volley;
 
 public class HomeActivity extends AppCompatActivity {
 
-    public Intent donor_page;
+    public Intent openDashboard;
     public Button submit, new_user;
+    public String username;
+    public String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +29,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
-    public void openDonorList(View view){
-        String username = ((EditText) findViewById(R.id.username_field)).getText().toString();
-        String password = ((EditText) findViewById(R.id.password_field)).getText().toString();
+    public void openDashboard(View view){
+        username = ((EditText) findViewById(R.id.username_field)).getText().toString();
+        password = ((EditText) findViewById(R.id.password_field)).getText().toString();
         submit = (Button) findViewById(R.id.submit_button);
         new_user = (Button) findViewById(R.id.user_button);
 
-        donor_page = new Intent(this,DonorList.class);
+        openDashboard = new Intent(this,Dashboard.class);
 
         //The URL to which GET request is sent
         String REGISTER_URL = ("http://dheerajprojects.gear.host/web_server.php?username='" + Uri.encode(username) + "'&password=\"" + Uri.encode(password) + "\"");
@@ -51,7 +53,9 @@ public class HomeActivity extends AppCompatActivity {
                         public void onResponse(String response) {
                             //Check if the entered password is correct
                             if(response.equals("Success")) {
-                                startActivity(donor_page);
+                                openDashboard.putExtra("uname", username);
+                                openDashboard.putExtra("pass", password);
+                                startActivity(openDashboard);
                                 Toast.makeText(getApplicationContext(), "Welcome!", Toast.LENGTH_LONG).show();
                                 submit.setEnabled(true);
                                 new_user.setEnabled(true);
@@ -84,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openCreateList(View view){
-        Intent i = new Intent(this,CreateList.class);
+        Intent i = new Intent(this, CreateList.class);
         startActivity(i);
     }
 }

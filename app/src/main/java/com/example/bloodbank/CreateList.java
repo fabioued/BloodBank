@@ -59,7 +59,7 @@ public class CreateList extends AppCompatActivity {
         blood_type = spinner.getSelectedItem().toString();
 
         //The URL to which GET request is sent
-        String REGISTER_URL = ("http://dheerajprojects.gear.host/web_server.php?type='insert'&username='" + uname_value.getText().toString() + "'&password='" + pass_value.getText().toString() + "'&name='" + name_value.getText().toString() + "'&bloodtype='" + Uri.encode(blood_type) + "'&location='" + loc_value.getText().toString() + "'&allergies='" + aller_value.getText().toString() + "'");
+        String REGISTER_URL = ("http://dheerajprojects.gear.host/web_server.php?type='insert'&username='" + uname_value.getText().toString() + "'&password='" + pass_value.getText().toString() + "'&name='" + Uri.encode(name_value.getText().toString()) + "'&bloodtype='" + Uri.encode(blood_type) + "'&location='" + Uri.encode(loc_value.getText().toString()) + "'&allergies='" + Uri.encode(aller_value.getText().toString()) + "'");
 
         //Check if any of the fields are empty
         if (name_value.getText().length() == 0 || loc_value.getText().length() == 0 || pass_value.getText().length() == 0 || uname_value.getText().length() == 0) {
